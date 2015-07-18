@@ -8881,6 +8881,15 @@ TEST_F(FormatTest, AllmanBraceBreaking) {
                "  int i;\n"
                "};",
                AllmanBraceStyle);
+  // .. or C++11 lambdas..
+  FormatStyle AttachedBraceLambda = AllmanBraceStyle;
+  // TODO: AttachedBraceLambda.AttachOpeningBraceInLambdas = true;
+  verifyFormat("[]() {}", AttachedBraceLambda);
+  verifyFormat("[]() -> bool { return false; }", AttachedBraceLambda);
+  verifyFormat("SomeFunction([]() { // A cool function...\n"
+               "  return 43;\n"
+               "});",
+               AttachedBraceLambda);
   // .. or dict literals.
   verifyFormat("void f()\n"
                "{\n"

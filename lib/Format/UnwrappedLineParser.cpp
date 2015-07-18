@@ -1012,6 +1012,8 @@ bool UnwrappedLineParser::tryToParseLambda() {
       return true;
     }
   }
+  assert(FormatTok->is(tok::l_brace));
+  FormatTok->Type = TT_LambdaLBrace;
   LSquare.Type = TT_LambdaLSquare;
   parseChildBlock();
   return true;

@@ -57,6 +57,7 @@ namespace format {
   TYPE(JsTypeOptionalQuestion) \
   TYPE(LambdaArrow) \
   TYPE(LambdaLSquare) \
+  TYPE(LambdaLBrace) \
   TYPE(LeadingJavaAnnotation) \
   TYPE(LineComment) \
   TYPE(MacroBlockBegin) \
